@@ -5,6 +5,7 @@ var cssmin = require('gulp-minify-css');
 var htmlmin = require('gulp-htmlmin');
 
 
+
 var paths = {
   scripts: ['client/js/**/*.coffee', '!client/external/**/*.coffee'],
   images: 'client/img/**/*'
