@@ -4,6 +4,7 @@ var del = require('del');
 var cssmin = require('gulp-minify-css');
 var htmlmin = require('gulp-htmlmin');
 var pages = require('gulp-gh-pages');
+var karma = require('gulp-karma');
 
 
 var paths = {
@@ -35,7 +36,13 @@ gulp.task('minify', function() {
 
 });
 
-gulp.task('pages', function () {
-  return gulp.src([])
-    .pipe(pages())
+gulp.task('test', function() {
+    return gulp.src([])
+    .pipe(karma({
+      configFile: 'karma.conf.js',
+      action: 'run'
+    }))
+    .on('error', function(err) {
+    throw err;
+    });
 });
